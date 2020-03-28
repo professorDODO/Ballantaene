@@ -67,7 +67,11 @@ crashlytics-build.properties
 
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
+<<<<<<< HEAD
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # As a general rule, the sublime-project file would be checked into version control, while the sublime-workspace file would not. --source: some guy on a forum
 *.sublime-workspace
+=======
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+>>>>>>> c91d79945cf2e442d0136e85bc1c182f297a0fc1
