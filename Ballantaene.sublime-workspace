@@ -105,10 +105,16 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/roman/Google Drive/Workspace/Unitiy/Ballantaene"
+		"/C/Users/roman/Google Drive/Workspace/Unitiy/Ballantaene/Assets/Scripts"
 	],
 	"file_history":
 	[
+		"/C/msys64/home/roman/.ssh/id_rsa.pub",
+		"/C/Users/roman/Google Drive/Workspace/Unitiy/Ballantaene/.git/config",
+		"/C/Users/roman/Google Drive/Workspace/Unitiy/Ballantaene/Ballantaene.sublime-project",
+		"/C/Users/roman/Google Drive/Workspace/Unitiy/Ballantaene/Unity.gitattributes",
+		"/C/Users/roman/Google Drive/Workspace/Unitiy/Unity.gitignore",
+		"/C/Users/roman/Google Drive/Workspace/Unitiy/Unity.gitattributes",
 		"/C/Users/roman/Google Drive/Workspace/Python/Uni/MI1/MI1sheet00",
 		"/C/Users/roman/Google Drive/Workspace/Python/Uni/MI1/MI1sheet01.py",
 		"/C/Users/roman/Downloads/sheet00_solution.ipynb",
@@ -242,7 +248,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":
