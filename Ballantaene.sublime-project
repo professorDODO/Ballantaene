@@ -3,15 +3,18 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "Assets/Scripts",
+			"path": ".",
 			"file_exclude_patterns":
 			[
 				"*.dll",
-				"*.meta"
+				"*.meta",
+				"*.csproj",
+        "*.booproj",
+        "*.unityproj"
 			]
 		}
 	],
-	"solution_file": "./Ballantaene.sln",
+	"solution_file": "Ballantaene.sln",
 	"settings":
 	{
 		"tab_size": 2,
