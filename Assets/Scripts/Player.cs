@@ -67,6 +67,7 @@ public class Player : MonoBehaviour {
 		));
 	}
 
+	//ToDo: "mousePos.x - transform.position.x" muss richtig berechnet werden, wenn der Cursor am Spielrand ist
 	void playerPos() {
 		float nextSpeed = (mousePos.x - transform.position.x)/Time.fixedDeltaTime;
 		if (Mathf.Abs(nextSpeed) > maxSpeed) {
