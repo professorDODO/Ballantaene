@@ -11,12 +11,10 @@ public class Player : MonoBehaviour {
 	Vector3 mousePos = Vector3.zero;
 	Vector3 lastPos = Vector3.zero;
 	int frameCounter = 0;
-	[SerializeField] int speedFrameInterp;
+	[SerializeField] int speedFrameInterp = 3;
 	[SerializeField] float speed;
-	[SerializeField] float maxSpeed;
-	[SerializeField] float deadZoneSpeed;
-	public float speedMedian = 0f;
-	int spMedCounter = 0;
+	[SerializeField] float maxSpeed = 20;
+	Vector3 ballFreezePos = Vector3.zero;
 
 	void Start() {
 		mousePos = posOnScreen();
@@ -29,33 +27,21 @@ public class Player : MonoBehaviour {
 	void Update() {
 		mousePos = posOnScreen();
 		if (Input.GetMouseButtonDown(0)) {
-			BallScript.spawn(transform.position);
+			BallScript.spawn(transform.position, speed);
+			ballFreezePos = transform.position;
 		}
 		if (Input.GetMouseButton(0)) {
-			if (speedMedian*speed >= 0) {
-				if (Mathf.Abs(speed) > deadZoneSpeed) {
-					speedMedian = (speedMedian + speed)/(1 + spMedCounter);
-					spMedCounter = spMedCounter + 1;
-				}
-			} else {
-				speedMedian = speed;
-				spMedCounter = 0;
-			}
+			
 		}
 		if (Input.GetMouseButtonUp(0)) {
-			BallScript.launch(speedMedian, maxSpeed);
-			speedMedian = 0f;
-			spMedCounter = 0;
+			BallScript.launch(ballFreezePos.x - transform.position.x);
 		}
 		
 	}
 
 	void FixedUpdate() {
 		playerPos();
-		//calcSpeed();
-		if (Input.GetMouseButton(0)) {
-			//ToDo: Energieverlust im Anspin-modus
-		}
+		calcSpeed();
 	}
 
 
@@ -93,14 +79,16 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	//momentan obsolet, könnte aber später noch hilfreich sein, wenn der Speed nicht akurat genug berechnet wird
-	float calcSpeed() {
+float calcSpeed() {
 		float tempSpeed = (transform.position.x - lastPos.x)/(speedFrameInterp*Time.fixedDeltaTime);
 		if (frameCounter >= speedFrameInterp) {
 			lastPos = transform.position;
 			frameCounter = 0;
 		} else {
 			frameCounter = frameCounter + 1;
+		}
+		if (tempSpeed > maxSpeed) {
+			tempSpeed = maxSpeed;
 		}
 		return tempSpeed;
 	}
