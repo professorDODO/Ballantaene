@@ -2,60 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour {
+public class Ball : MonoBehaviour{
 
+	bool launched = false;
 	Vector2 direction = Vector2.zero;
 	float spin = 0.0f;
-	float speed = 0.0f;
+	float speed = 0.1f;
+	float launchSpeed = 0f;
+	[SerializeField] float maxdeflection = 5;
 
-	bool bound = true;
-	[SerializeField]
-	GameObject player = null;
-
-	void Start () {
-		spawn();
-	}
-
-	public void spawn () {
-		bound = true;
-		float rand = Random.Range(0.2f, 0.8f);
-		direction = new Vector2(rand, 1.0f - rand);
-		speed = 0.05f;
-		transform.position = new Vector3(
-			player.transform.position.x,
-			player.transform.position.y + 0.1f,
-			1f
-		);
-	}
-	public void reflect (Vector2 normal, float speed_mod = 0.0f, float spin_mod = 0.0f) {
-		direction = Vector2.Reflect(direction, normal);
-		speed += speed_mod;
-		spin += spin_mod;
-	}
-
-	public Vector2 getDirection () { return direction; }
-	public float getSpin () { return spin; }
-	public float getSpeed () { return speed; }
-
-	void Update () {
-		if (Input.GetKey("up")) {
-			bound = false;
-		}
-	}
-
-	void FixedUpdate () {
-		if (bound) {
-			transform.position = new Vector3(
-				player.transform.position.x,
-				player.transform.position.y + 0.4f,
-				1f
-			);
-		} else {
+	void FixedUpdate(){
+		if (launched == true) {
 			transform.position = new Vector3(
 				transform.position.x + direction.x * speed,
 				transform.position.y + direction.y * speed,
-				0
+				0f
 			);
 		}
+	}
+
+public void reflect (Vector2 normal) {
+		direction = Vector2.Reflect(direction, normal);
+	}
+
+	public void spawn(Vector3 pTf, float launchSPeedTemp) {
+		launchSpeed = launchSPeedTemp;
+		gameObject.SetActive(true);
+		transform.position = new Vector3(
+			pTf.x,
+			pTf.y + 0.4f,
+			0f
+		);
+		launched = false;
+	}
+
+	public void launch(float deflection) {
+		if (Mathf.Abs(deflection) > maxdeflection) {
+			deflection = maxdeflection;
+		}
+		direction = new Vector2(deflection, maxdeflection - Mathf.Abs(deflection)).normalized;
+		launched = true;
+		launchSpeed = 0f;
 	}
 }

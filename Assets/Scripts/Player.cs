@@ -5,8 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	//Script in Editor hinzugefügt
-	[SerializeField]
-	Ball2 BallScript;
+	[SerializeField]Ball BallScript;
 	
 	Vector3 mousePos = Vector3.zero;
 	Vector3 lastPos = Vector3.zero;
@@ -15,6 +14,8 @@ public class Player : MonoBehaviour {
 	[SerializeField] float speed;
 	[SerializeField] float maxSpeed = 20;
 	Vector3 ballFreezePos = Vector3.zero;
+	[SerializeField] bool atWall = false;
+	float awayFromWall = 0f;
 
 	void Start() {
 		mousePos = posOnScreen();
@@ -53,29 +54,30 @@ public class Player : MonoBehaviour {
 		));
 	}
 
+	public void setAtWall(bool aW, float awayFromWallTemp) {
+		atWall = aW;
+		awayFromWall = awayFromWallTemp;
+	}
+
 	//ToDo: "mousePos.x - transform.position.x" muss richtig berechnet werden, wenn der Cursor am Spielrand ist
 	void playerPos() {
 		float nextSpeed = (mousePos.x - transform.position.x)/Time.fixedDeltaTime;
-		if (Mathf.Abs(nextSpeed) > maxSpeed) {
-			transform.position = new Vector3(
-				transform.position.x + Mathf.Abs(nextSpeed)/nextSpeed*maxSpeed*Time.fixedDeltaTime,
-				transform.position.y,
-				transform.position.z
-			);
-			speed = Mathf.Abs(nextSpeed)/nextSpeed*maxSpeed;
-		}else {
-			transform.position = new Vector3(
-				mousePos.x,
-				transform.position.y,
-				transform.position.z
-			);
-			speed = nextSpeed;
-		}
-		//ToDo: Hardcoded gegen Wandpos ersetzen
-		if (transform.position.x > 3.4f) {
-			transform.position = new Vector3(3.4f, -4.5f, 0);
-		} else if (transform.position.x < -3.4f) {
-			transform.position = new Vector3(-3.4f, -4.5f, 0);
+		if (!atWall || (atWall && (mousePos.x - transform.position.x)*awayFromWall > 0)) {
+			if (Mathf.Abs(nextSpeed) > maxSpeed) {
+				transform.position = new Vector3(
+					transform.position.x + Mathf.Abs(nextSpeed)/nextSpeed*maxSpeed*Time.fixedDeltaTime,
+					transform.position.y,
+					transform.position.z
+				);
+				speed = Mathf.Abs(nextSpeed)/nextSpeed*maxSpeed;
+			}else {
+				transform.position = new Vector3(
+					mousePos.x,
+					transform.position.y,
+					transform.position.z
+				);
+				speed = nextSpeed;
+			}
 		}
 	}
 
