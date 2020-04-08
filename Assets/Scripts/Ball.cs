@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour{
 
+	public SoundFX SFX;
 	bool launched = false;
 	Vector2 direction = Vector2.zero;
 	float spin = 0.0f;
@@ -43,5 +44,7 @@ public void reflect (Vector2 normal) {
 		direction = new Vector2(deflection, maxdeflection - Mathf.Abs(deflection)).normalized;
 		launched = true;
 		launchSpeed = 0f;
+		SFX.GetComponent<SoundFX>().sfxBounce(0);
+		SFX.GetComponent<SoundFX>().setCanRunAudio(true);
 	}
 }

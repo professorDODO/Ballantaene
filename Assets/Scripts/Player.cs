@@ -23,8 +23,6 @@ public class Player : MonoBehaviour {
 		lastPos = transform.position;
 	}
 
-	//LEO: Verstehst du, warum der Mittelwert des Speeds "speedMeadian"
-	//		 Nicht dem tatsächlichem Mittelwert zu entsprechen scheint?
 	void Update() {
 		mousePos = posOnScreen();
 		if (Input.GetMouseButtonDown(0)) {

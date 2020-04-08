@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour {
 
-	public SoundFX SFX;
 	[SerializeField] Vector2 normal = Vector2.zero;
-	[SerializeField] bool canRunAudio = true;
-	int counter = 0;
+	int counter = 1;
 
 	private void OnTriggerEnter2D (Collider2D col) {
 		GameObject other = col.gameObject;
 		if (other.CompareTag("Ball")) {
       other.GetComponent<Ball>().reflect(normal);
-      if (gameObject.CompareTag("Player") && canRunAudio) {
+      if (gameObject.CompareTag("Player")) {
         if (counter == 0) {
-        	SFX.GetComponent<SoundFX>().sfxBounce(0);
+        	other.GetComponent<SoundFX>().sfxBounce(0);
         	counter = 1;
         } else {
-					SFX.GetComponent<SoundFX>().sfxBounce(1);
+					other.GetComponent<SoundFX>().sfxBounce(1);
 					counter = 0;
         }
+      } else if (gameObject.CompareTag("Boundary")) {
+      	other.GetComponent<SoundFX>().sfxBounce(2);
       }
     }
     if (other.CompareTag("Player")) {
@@ -33,8 +33,8 @@ public class Collision : MonoBehaviour {
 		if (other.CompareTag("Player")) {
     	other.GetComponent<Player>().setAtWall(false, 0);
     }
-    if (other.CompareTag("Ball") && gameObject.CompareTag("Player") && canRunAudio) {
-        canRunAudio = true;
+    if (other.CompareTag("Ball")) {
+        other.GetComponent<SoundFX>().setCanRunAudio(true);
     }
 	}
 }

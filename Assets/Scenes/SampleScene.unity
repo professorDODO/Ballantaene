@@ -262,9 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: {fileID: 1574704259}
   normal: {x: 0, y: 1}
-  canRunAudio: 1
 --- !u!50 &67200589
 Rigidbody2D:
   serializedVersion: 4
@@ -492,7 +490,7 @@ GameObject:
   - component: {fileID: 827461095}
   m_Layer: 0
   m_Name: Bl
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,9 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: {fileID: 0}
   normal: {x: 1, y: 0}
-  canRunAudio: 1
 --- !u!1 &991743365
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +612,7 @@ GameObject:
   - component: {fileID: 991743369}
   m_Layer: 0
   m_Name: Bb
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,7 +733,7 @@ GameObject:
   - component: {fileID: 1237186113}
   m_Layer: 0
   m_Name: Bt
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,9 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: {fileID: 0}
   normal: {x: 0, y: -1}
-  canRunAudio: 1
 --- !u!1 &1340804155
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1340804156
 Transform:
   m_ObjectHideFlags: 0
@@ -894,7 +888,7 @@ GameObject:
   - component: {fileID: 1378348072}
   m_Layer: 0
   m_Name: Br
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1001,9 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: {fileID: 0}
   normal: {x: -1, y: 0}
-  canRunAudio: 1
 --- !u!1 &1559006986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8303a094623dcc6488df593ae21df61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFX: {fileID: 1574704259}
   maxdeflection: 5
 --- !u!114 &1574704259
 MonoBehaviour:
@@ -1361,6 +1354,7 @@ MonoBehaviour:
   audioSrcArr:
   - {fileID: 8300000, guid: 355df2c66bb3a1b4d9daa2a6be20ea4f, type: 3}
   - {fileID: 8300000, guid: c3abdb8092033904b87422192b2931f2, type: 3}
+  - {fileID: 8300000, guid: 66311f9a28ce9d84ab28c728e4c0680e, type: 3}
 --- !u!1 &1726224165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1475,7 @@ GameObject:
   - component: {fileID: 1978947102}
   m_Layer: 0
   m_Name: Boarder
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
