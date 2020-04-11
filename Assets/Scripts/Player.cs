@@ -25,24 +25,20 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		mousePos = posOnScreen();
-		if (Input.GetMouseButtonDown(0)) {
-			BallScript.spawn(transform.position, speed);
+		if (Input.GetMouseButtonDown(0)) {;
+			BallScript.spawn(transform.position);
 			ballFreezePos = transform.position;
 		}
 		if (Input.GetMouseButton(0)) {
 			
 		}
 		if (Input.GetMouseButtonUp(0)) {
-			BallScript.launch(ballFreezePos.x - transform.position.x);
+			BallScript.launch(transform.position.x - ballFreezePos.x);
 		}
 		
-	}
-
-	void FixedUpdate() {
 		playerPos();
 		calcSpeed();
 	}
-
 
 	Vector3 posOnScreen() {
 		return Camera.main.ScreenToWorldPoint(new Vector3(
@@ -68,7 +64,7 @@ public class Player : MonoBehaviour {
 					transform.position.z
 				);
 				speed = Mathf.Abs(nextSpeed)/nextSpeed*maxSpeed;
-			}else {
+			} else {
 				transform.position = new Vector3(
 					mousePos.x,
 					transform.position.y,

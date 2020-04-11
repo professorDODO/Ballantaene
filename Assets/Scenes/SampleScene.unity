@@ -157,7 +157,7 @@ MonoBehaviour:
   BallScript: {fileID: 1574704258}
   speedFrameInterp: 3
   speed: 0
-  maxSpeed: 20
+  maxSpeed: 200
   atWall: 0
 --- !u!61 &67200585
 BoxCollider2D:
@@ -337,7 +337,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 795051979}
   - component: {fileID: 795051978}
   - component: {fileID: 795051980}
+  - component: {fileID: 795051981}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -476,6 +477,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &795051981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795051977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {x: 0.5, y: 0.5}
 --- !u!1 &827461090
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1340804156
 Transform:
   m_ObjectHideFlags: 0
@@ -1104,6 +1118,7 @@ GameObject:
   - component: {fileID: 1559006989}
   - component: {fileID: 1559006988}
   - component: {fileID: 1559006987}
+  - component: {fileID: 1559006990}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -1202,6 +1217,19 @@ Transform:
   m_Father: {fileID: 1340804156}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559006990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559006986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {x: 0.5, y: 0.5}
 --- !u!1 &1574704252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1491,7 @@ GameObject:
   - component: {fileID: 1726224168}
   - component: {fileID: 1726224167}
   - component: {fileID: 1726224166}
+  - component: {fileID: 1726224169}
   m_Layer: 0
   m_Name: Brick (2)
   m_TagString: Untagged
@@ -1561,6 +1590,19 @@ Transform:
   m_Father: {fileID: 1340804156}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1726224169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726224165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {x: 0.5, y: 0.5}
 --- !u!1 &1978947101
 GameObject:
   m_ObjectHideFlags: 0
