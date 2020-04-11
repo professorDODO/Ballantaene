@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 67200587}
   - component: {fileID: 67200586}
-  - component: {fileID: 67200589}
   - component: {fileID: 67200585}
   - component: {fileID: 67200584}
   - component: {fileID: 67200588}
@@ -169,7 +168,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -263,27 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normal: {x: 0, y: 1}
---- !u!50 &67200589
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67200583}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,8 +479,7 @@ GameObject:
   - component: {fileID: 827461091}
   - component: {fileID: 827461093}
   - component: {fileID: 827461092}
-  - component: {fileID: 827461095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bl
   m_TagString: Boundary
   m_Icon: {fileID: 0}
@@ -599,19 +576,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &827461095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827461090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normal: {x: 1, y: 0}
 --- !u!1 &991743365
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,8 +805,7 @@ GameObject:
   - component: {fileID: 1237186110}
   - component: {fileID: 1237186112}
   - component: {fileID: 1237186111}
-  - component: {fileID: 1237186113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bt
   m_TagString: Boundary
   m_Icon: {fileID: 0}
@@ -939,19 +902,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1237186113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237186109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normal: {x: 0, y: -1}
 --- !u!1 &1340804155
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1340804156
 Transform:
   m_ObjectHideFlags: 0
@@ -996,8 +946,7 @@ GameObject:
   - component: {fileID: 1378348068}
   - component: {fileID: 1378348070}
   - component: {fileID: 1378348069}
-  - component: {fileID: 1378348072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Br
   m_TagString: Boundary
   m_Icon: {fileID: 0}
@@ -1094,19 +1043,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1378348072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378348067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normal: {x: -1, y: 0}
 --- !u!1 &1559006986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1574704255}
   - component: {fileID: 1574704254}
-  - component: {fileID: 1574704257}
   - component: {fileID: 1574704253}
   - component: {fileID: 1574704258}
   - component: {fileID: 1574704259}
@@ -1262,7 +1197,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1429,27 +1364,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!50 &1574704257
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574704252}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!114 &1574704258
 MonoBehaviour:
   m_ObjectHideFlags: 0
