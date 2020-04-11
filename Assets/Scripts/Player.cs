@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		mousePos = posOnScreen();
-		if (Input.GetMouseButtonDown(0)) {;
+		if (Input.GetMouseButtonDown(0)) {
 			BallScript.spawn(transform.position);
 			ballFreezePos = transform.position;
 		}

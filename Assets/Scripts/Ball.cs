@@ -26,7 +26,6 @@ public class Ball : MonoBehaviour{
 
 	public void launch (float launchSpin) {
 		Debug.Log("launchSpin: " + launchSpin);
-		// spin = launchSpin;
 		spin = launchSpin;
 		bound = false;
 		SFX.GetComponent<SoundFX>().sfxBounce(0);
