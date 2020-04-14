@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 67200585}
   - component: {fileID: 67200584}
   - component: {fileID: 67200588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1378,6 +1378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFX: {fileID: 1574704259}
   maxdeflection: 5
+  interpolationFrames: 2
 --- !u!114 &1574704259
 MonoBehaviour:
   m_ObjectHideFlags: 0

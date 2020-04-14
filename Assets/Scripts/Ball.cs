@@ -10,7 +10,8 @@ public class Ball : MonoBehaviour{
 	Vector2 direction = Vector2.zero;
 	float spin = 0.0f;
 	float speed = 0.0f;
-	[SerializeField] float maxdeflection = 5;
+	[SerializeField] float maxdeflection = 5f;
+	[SerializeField] int interpolationFrames = 2;
 
 	public void spawn(Vector3 spawnPosition) {
 		gameObject.SetActive(true);
@@ -33,8 +34,8 @@ public class Ball : MonoBehaviour{
 		SFX.GetComponent<SoundFX>().setCanRunAudio(true);
 	}
 
-	public void rotate() {
-		float deltaSpin = spin * Time.deltaTime;
+	public void rotate(float fraction) {
+		float deltaSpin = fraction * spin * Time.deltaTime;
 		float sin = Mathf.Sin(deltaSpin);
 		float cos = Mathf.Cos(deltaSpin);
 		direction = new Vector2 (
@@ -59,26 +60,23 @@ public class Ball : MonoBehaviour{
 	}
 
 	//ToDo: spin und speed mod vom collidable object holen
-	void checkCollision() {
+	//returns true, wenn something was hit
+	bool checkCollision(float fraction) {
 		float range = speed * Time.deltaTime;
 		float distancePercentage = 1f;
-		//raycast vom äußersten Ende des Balls in Bewegungsrichtung
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, collider.radius + range);
+		RaycastHit2D hit = Physics2D.CircleCast(transform.position, collider.radius, direction, fraction * range, LayerMask.GetMask("Collidable"));
 		if (hit.collider != null) {
-			if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Collidable")) {
-				if (hit.collider.OverlapPoint(transform.position)) {
-					Debug.Log("Ball Position was inside a Wall-Collider");
-				}
-				//Reflektionspunkt minus Länge, die vom Hitpoint aus am Ray zrückgegangen werden muss, damit der Ball nicht ins Collidable clipt
-				Vector2 reflectPosition = hit.point - collider.radius/Mathf.Cos(Vector2.Angle(hit.normal, -direction))*direction;
-
-				distancePercentage = 1 - (new Vector2(transform.position.x, transform.position.y) - reflectPosition).magnitude/range;
-				reflect(hit.normal);
-				direction = direction * distancePercentage;
-				//die Position des Balls wird an den Reflektionspunkt gelegt,
-				//damit move von hier aus in die neue Richtung bewegt.
-				transform.position = reflectPosition;
+			if (hit.collider.OverlapPoint(transform.position)) {
+					Debug.Log("Ball Position was inside a Collider");
 			}
+			Vector2 reflectPosition = hit.centroid;
+			distancePercentage = 1 - (new Vector2(transform.position.x, transform.position.y) - reflectPosition).magnitude/(fraction * range);
+			reflect(hit.normal);
+			direction = direction * distancePercentage;
+			transform.position = reflectPosition;
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -90,10 +88,16 @@ public class Ball : MonoBehaviour{
     collider = GetComponent<CircleCollider2D>();
 	}
 
+	//ToDo: InterpolationFrames sorgen dafür, dass der Ball ab und zu stecken bleibt
+	//			war kein Prolem, ohne Interpolation
 	void Update() {
 		if (!bound){
-			rotate();
-			checkCollision();
+			for (int i = 1; i <= interpolationFrames; i++)  {
+  			rotate((float)i/interpolationFrames);
+				if (checkCollision((float)i/interpolationFrames)) {
+					break;
+				}
+  		}
 			move();
 		}
 	}
