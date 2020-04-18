@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {x: 0, y: 1}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {x: 0.5, y: 0.5}
 --- !u!1 &827461090
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +477,7 @@ GameObject:
   - component: {fileID: 827461091}
   - component: {fileID: 827461093}
   - component: {fileID: 827461092}
+  - component: {fileID: 827461094}
   m_Layer: 8
   m_Name: Bl
   m_TagString: Boundary
@@ -576,6 +575,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &827461094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827461090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &991743365
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,11 +598,12 @@ GameObject:
   - component: {fileID: 991743366}
   - component: {fileID: 991743368}
   - component: {fileID: 991743367}
-  - component: {fileID: 991743369}
   - component: {fileID: 991743370}
-  m_Layer: 0
+  - component: {fileID: 991743371}
+  - component: {fileID: 991743369}
+  m_Layer: 8
   m_Name: Bb
-  m_TagString: Boundary
+  m_TagString: DeathPit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,7 +707,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 991743365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d9c44ce7dc411b4da18d5c0d236a5b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 778b661ce46028340b75c476720906fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!82 &991743370
@@ -794,6 +806,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &991743371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991743365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237186109
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +829,7 @@ GameObject:
   - component: {fileID: 1237186110}
   - component: {fileID: 1237186112}
   - component: {fileID: 1237186111}
+  - component: {fileID: 1237186113}
   m_Layer: 8
   m_Name: Bt
   m_TagString: Boundary
@@ -902,6 +927,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1237186113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237186109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1340804155
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +983,7 @@ GameObject:
   - component: {fileID: 1378348068}
   - component: {fileID: 1378348070}
   - component: {fileID: 1378348069}
+  - component: {fileID: 1378348071}
   m_Layer: 8
   m_Name: Br
   m_TagString: Boundary
@@ -1043,6 +1081,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1378348071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378348067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1559006986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {x: 0.5, y: 0.5}
 --- !u!1 &1574704252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1228,7 @@ GameObject:
   - component: {fileID: 1574704253}
   - component: {fileID: 1574704258}
   - component: {fileID: 1574704259}
+  - component: {fileID: 1574704257}
   - component: {fileID: 1574704256}
   m_Layer: 0
   m_Name: Ball
@@ -1364,6 +1414,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1574704257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574704252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9c44ce7dc411b4da18d5c0d236a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1574704258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,7 +1579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380b6a08a89399b4ab04d25dd5f7f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {x: 0.5, y: 0.5}
 --- !u!1 &1978947101
 GameObject:
   m_ObjectHideFlags: 0

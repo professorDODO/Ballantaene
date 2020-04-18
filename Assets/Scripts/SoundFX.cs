@@ -16,7 +16,7 @@ public class SoundFX : MonoBehaviour
 		if (canRunAudio) {
 			audioSource.clip = audioSrcArr[i];
 			audioSource.Play();
-			canRunAudio = false;
+			//canRunAudio = false;
 		}
 	}
 

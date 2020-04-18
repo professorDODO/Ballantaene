@@ -69,6 +69,7 @@ public class Ball : MonoBehaviour{
 			if (hit.collider.OverlapPoint(transform.position)) {
 					Debug.Log("Ball Position was inside a Collider");
 			}
+			hit.collider.gameObject.GetComponent<Collision>().collide(this.gameObject);
 			Vector2 reflectPosition = hit.centroid;
 			distancePercentage = 1 - (new Vector2(transform.position.x, transform.position.y) - reflectPosition).magnitude/(fraction * range);
 			reflect(hit.normal);
@@ -92,12 +93,16 @@ public class Ball : MonoBehaviour{
 	//			war kein Prolem, ohne Interpolation
 	void Update() {
 		if (!bound){
+			/*
 			for (int i = 1; i <= interpolationFrames; i++)  {
   			rotate((float)i/interpolationFrames);
 				if (checkCollision((float)i/interpolationFrames)) {
 					break;
 				}
   		}
+  		*/
+  		rotate(1);
+  		checkCollision(1);
 			move();
 		}
 	}

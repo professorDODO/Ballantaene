@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Boundary
+  - DeathPit
   layers:
   - Default
   - TransparentFX
